@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="app"></div>
+
+<script type="text/babel">
+    
+    const Header = () => {
+        return (
+            <div className="block-nav">
+                <div className="header container">
+                    <div className="logo">
+                        <a href="#"><img width="90px" src="src/logo.png" alt="Лого компании"/></a>
+                    </div>
+                    <div className="header-nav">
+                        <ul className="ul-nav">
+                            <li className="li-nav"><a href="#">Home</a></li>
+                            <li className="li-nav"><a href="#">About Us</a></li>
+                            <li className="li-nav"><a href="#">Contacts</a></li>
+                            <li className="li-nav"><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+
+    const FilmBanner = (props) => {
+        return (
+            <div className="block">
+                <img className="poster" src={props.imageUrl} alt="" />
+                <div className="description">
+                    <h1 className="title">{props.title}</h1>
+                    <p className="date">{props.date}</p>
+                </div>
+            </div>
+        );
+    }
+    const Banner = () => (
+        <div className="block-container container">
+            <FilmBanner
+                title="The Fall Guy"
+                date="May 3, 2024"
+                imageUrl="./src/TheFallGuy.jpg"
+            />
+            <FilmBanner
+                title="Bullet Train"
+                date="August 5, 2022"
+                imageUrl="./src/BulletTrain-2.0.jpg"
+            />
+            <FilmBanner
+                title="Inglourious Basterds"
+                date="July 28, 2009"
+                imageUrl="./src/InglouriousBasterds.jpg"
+            />
+        </div>
+    );
+
+    const Sidebar = () => {
+        return (
+            <div className="sidebar">
+                <h2>Via-Films Navigation</h2>
+                <ul className="sidebar-ul">
+                    <li><a className="sidebar-href" href="#">Account</a></li>
+                    <li><a className="sidebar-href" href="#">Settings</a></li>
+                    <li><a className="sidebar-href" href="#">Contacts</a></li>
+                    <li><a className="sidebar-href" href="#">Support</a></li>
+                </ul>
+            </div>
+        );
+    };
+
+    const Footer = () => {
+        return (
+            <footer className="footer">
+                <div className="container">
+                    <div className="footer-content">
+                        <div className="footer-section">
+                            <h3>Contact Information</h3>
+                            <p>Address: 123 Example Street, City, Country</p>
+                            <p>Phone: +1234567890</p>
+                            <p>Email: info@example.com</p>
+                        </div>
+                        <div className="footer-section">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div className="footer-section">
+                            <h3>Subscribe to Our Newsletter</h3>
+                            <form>
+                                <input type="email" placeholder="Enter your email"/>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="footer-bottom">
+                        <p>&copy; 2024 All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        );
+    };
+
+    const BlockWeb = () => (
+        <>
+            <Header/>
+            <div className="main-content">
+                <Sidebar/>
+                <Banner/>
+            </div>
+            <Footer/>
+        </>
+    );
+
+
+    const appContainer = document.querySelector('.app');
+    const root = ReactDOM.createRoot(appContainer);
+    root.render(<BlockWeb/>);
+</script>
+</body>
+</html>
