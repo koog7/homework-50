@@ -1,0 +1,59 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+</div>
+<script type="text/babel">
+
+    const FilmBanner = (props) => {
+        return (
+            <div className="block">
+                <img className="poster" src={props.imageUrl} alt="" />
+                <div className="description">
+                    <h1 className="title">{props.title}</h1>
+                    <p className="date">{props.date}</p>
+                </div>
+            </div>
+        );
+    }
+    const Banner = () => (
+        <>
+            <FilmBanner
+                title="The Fall Guy"
+                date="May 3, 2024"
+                imageUrl="./src/TheFallGuy.jpg"
+            />
+            <FilmBanner
+                title="Bullet Train"
+                date="August 5, 2022"
+                imageUrl="./src/BulletTrain-2.0.jpg"
+            />
+            <FilmBanner
+                title="Inglourious Basterds"
+                date="July 28, 2009"
+                imageUrl="./src/InglouriousBasterds.jpg"
+            />
+        </>
+    );
+    const appContainer = document.querySelector('.app');
+    const root = ReactDOM.createRoot(appContainer);
+    root.render(<Banner />);
+
+</script>
+</body>
+</html>

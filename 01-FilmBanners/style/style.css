@@ -1,0 +1,54 @@
+*{
+    font-family: "Bebas Neue", sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1350px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.block{
+    background: #222831;
+    margin-left: 120px;
+    margin-top: 40px;
+    padding: 20px;
+    -webkit-box-shadow: 0 2px 15px 2px rgba(225,159,34,0.74); /*(225,165,0,0.74)*/
+    -moz-box-shadow: 0 2px 15px 2px rgba(225,159,34,0.74); /*(225,165,0,0.74)*/
+    box-shadow: 0 2px 15px 2px rgba(225,159,34,0.74); /*(225,165,0,0.74)*/
+    color: #222831;
+    max-height: 620px;
+    border-radius: 10px;
+    opacity: 0.5;
+    transition: all 0.3s ease-out;
+}
+.block:hover  {
+    opacity: 1;
+}
+
+.app{
+    display: flex;
+    flex-direction: row;
+    background: black;
+    height: 100%;
+}
+
+.description{
+    background: #ff9f22; /*FFA500FF*/
+}
+.title , .date{
+    padding: 10px;
+}
+
+.poster{
+    width: 300px;
+    min-height: 470px;
+}
+
+
+
+
